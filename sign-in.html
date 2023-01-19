@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<HTML>
+  <HEAD>
+    <style>
+    html{height:100%;width:100%;}
+    
+    body {
+    border:red;  
+    background-repeat: no-repeat;  
+    background-blend-mode: lighten; 
+    background-size: cover;
+    background-image: linear-gradient(to right bottom,#63A4FF 20%,#83EAF1 60%);
+    color:black;
+    font-size:105%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	} 
+    </style> 
+    
+    <script>
+    	function submission(){
+         let x = document.forms["myForm"]["fname"].value;
+ 		 if (x .localeCompare("hello")) {
+    		alert("Name must be filled out");
+    	 	return false;
+        }
+    </script>
+  </HEAD>
+  <BODY>
+    <center>
+      <h3 style = "text-align:center">SIGN IN</h3>
+
+      <form name="username">
+              USERNAME 
+              <input type="text" name="name" required>
+            
+      </form>    
+      
+	  <h3 style = "text-align:left"></h3>
+
+      <h3 style = "text-align:left"></h3>
+      
+	  <form name = "email_check"> 	
+      <label email1="email">Email:</label>
+      <input type="email" id="email" name="email">
+ 
+      </form>
+      
+      <h3 style = "text-align:left"></h3>
+      
+      <form name = "password" method="post" onclick = "return submission()">
+      <label password="pwd">Password:(min 3 char:)</label>
+      <input type="password" id="pwd" name="pwd" minlength="7" maxlength="20">
+      
+      <h3 style = "text-align:left"></h3>
+      	
+	  <label password="pwd">RETYPE PASSWORD</label>
+      <input type="password" id="pwd" name="pwd" minlength="7">
+      
+      </form>
+    
+      <h3 style = "text-align:left"></h3>
+      
+      <form name = "submission" onclick = "submission()">
+      		SUBMIT_ALL	
+      <input type = "submit"  value ="SUBMIT">
+      </form>
+    </center>
+  </BODY>
+</HTML>  
