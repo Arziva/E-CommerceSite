@@ -1,10 +1,33 @@
 <!DOCTYPE HTML>
 <HTML>
   <HEAD>
+  <script>
+    function checkuser() {
+      let text = document.forms["Username"]["username"].value;
+      var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
+      for(i = 0; i < specialChars.length;i++){
+      if(text.indexOf(specialChars[i]) > -1){
+         alert("Username should'nt have special characters");
+         return false;
+    }
+      }  
+      alert("Username Successfull");
+      
+      
+      let p1 = document.forms["Password"]["pwd1"].value;
+      let p2 = document.forms["Password"]["pwd2"].value;
+      if(p1==p2 && p1 != "")
+      alert("Perfect!")
+      else
+      alert("Retry Password!")
+      return false;  
+      }
+    
+</script>
     <style>
     html{height:100%;width:100%;}
     
-    body {
+    body  {
     border:red;  
     background-repeat: no-repeat;  
     background-blend-mode: lighten; 
@@ -13,57 +36,39 @@
     color:black;
     font-size:105%;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-	} 
+} 
     </style> 
     
-    <script>
-    	function submission(){
-         let x = document.forms["myForm"]["fname"].value;
- 		 if (x .localeCompare("hello")) {
-    		alert("Name must be filled out");
-    	 	return false;
-        }
-    </script>
   </HEAD>
   <BODY>
     <center>
       <h3 style = "text-align:center">SIGN IN</h3>
 
-      <form name="username">
-              USERNAME 
-              <input type="text" name="name" required>
-            
-      </form>    
-      
-	  <h3 style = "text-align:left"></h3>
+      <form name="Username" action="/action_page.php" method="post">
+  Username:&emsp; 
+  <input type="text" name="username">
+        <span>&ensp;&ensp;&ensp;&ensp;</span>
+  <input type="hidden" src="https://images.app.goo.gl/uP71Wcic8pTnPVEQ7" alt="Submit"  width="20" height="20" onclick="return checkuser()">
+</form>
 
       <h3 style = "text-align:left"></h3>
       
-	  <form name = "email_check"> 	
-      <label email1="email">Email:</label>
+ <form name = "email_check"> 
+      <label email1="email">Email:&emsp;</label>
       <input type="email" id="email" name="email">
- 
       </form>
       
       <h3 style = "text-align:left"></h3>
       
-      <form name = "password" method="post" onclick = "return submission()">
+ <form name = "Password" method="post">
       <label password="pwd">Password:(min 3 char:)</label>
-      <input type="password" id="pwd" name="pwd" minlength="7" maxlength="20">
-      
+      <input type="password" id="pwd1" name="pwd1" minlength="7" maxlength="20">
       <h3 style = "text-align:left"></h3>
-      	
-	  <label password="pwd">RETYPE PASSWORD</label>
-      <input type="password" id="pwd" name="pwd" minlength="7">
+ <label password="pwd">Retype password</label>
+      <input type="password" id="pwd2" name="pwd2" minlength="7" maxlength="20"><br><br>
+      <input type="image" src="https://images.app.goo.gl/uP71Wcic8pTnPVEQ7" alt="submit credentials"  width="20" height="20" onclick="return checkuser()">
+</form>
       
-      </form>
-    
-      <h3 style = "text-align:left"></h3>
-      
-      <form name = "submission" onclick = "submission()">
-      		SUBMIT_ALL	
-      <input type = "submit"  value ="SUBMIT">
-      </form>
     </center>
   </BODY>
 </HTML>  
