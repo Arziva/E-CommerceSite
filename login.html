@@ -15,12 +15,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script>
           function pass(){
-            let text = "Press a button!\n either okay or cancel.";
+            let text = "Press a button!\nEither OK or cancel.";
             if(confirm(text)==true){
-              text = "You have pressed okay."
+              text = "You have pressed OK."
             }
             else{
-              text = "You cancelled!"
+              text = "You have cancelled!"
               document.getElementById("credentials").innerHTML = text;
             }
           }
