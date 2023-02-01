@@ -11,6 +11,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+          function pass(){
+            let text = "Press a button!\n either okay or cancel.";
+            if(confirm(text)==true){
+              text = "You have pressed okay."
+            }
+            else{
+              text = "You cancelled!"
+              document.getElementById("credentials").innerHTML = text;
+            }
+          }
+        </script>
     </head>
     <body>
         <form action="action_page.php" method="post">
@@ -20,12 +34,13 @@
           
             <div class="container">
               <label for="u_name"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="u_name" pattern="[a-z]{3,20}" required>
+              <input type="text" placeholder="Enter Username" name="u_name" id="uname" pattern="[a-z]{3,20}" required>
           
               <label for="pw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="pw" minlength="8" maxlength="30" required>
+              <input type="password" placeholder="Enter Password" name="pw" id="pw" minlength="8" maxlength="30" required>
           
-              <button type="submit">Login</button>
+              <button type="submit" onclick="pass()">Login</button>
+              <p id="credentials"></p>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
               </label>

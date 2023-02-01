@@ -1,6 +1,23 @@
 
 <html>
   <head>
+    <script src="jquery-3.6.1.min.js"></script> <!--Jquery loader-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("p").click(function(){
+          $(this).hide();
+        });
+      });
+      $(document).ready(function(){
+        $("h1").hover(function(){
+          alert("Artizon is an combination of Art with amazon which signifies ease of shopping!");
+        },
+        function(){
+          alert("Hope you find our website an useful and thoughtful platform");
+        });  
+      });
+    </script>
     <style>
       .app_title {
         top: 20%;
