@@ -1,74 +1,168 @@
 <!DOCTYPE HTML>
 <HTML>
-  <HEAD>
-  <script>
-    function checkuser() {
-      let text = document.forms["Username"]["username"].value;
-      var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
-      for(i = 0; i < specialChars.length;i++){
-      if(text.indexOf(specialChars[i]) > -1){
-         alert("Username should'nt have special characters");
-         return false;
-    }
-      }  
-      alert("Username Successfull");
-      
-      
-      let p1 = document.forms["Password"]["pwd1"].value;
-      let p2 = document.forms["Password"]["pwd2"].value;
-      if(p1==p2 && p1 != "")
-      alert("Perfect!")
-      else
-      alert("Retry Password!")
-      return false;  
-      }
-    
-</script>
+
+<HEAD>
+    <script>
+        function img_increase(id) {
+            var enlarge = document.getElementById(id).style.width;
+            var enlarge1 = "" + parseInt(enlarge, 10) * 1.2 + "px";
+            document.getElementById(id).style.width = enlarge1;
+        }
+
+        function img_decrease(id) {
+            var enlarge = document.getElementById(id).style.width;
+            var enlarge1 = "" + parseInt(enlarge, 10) * 0.8 + "px";
+            document.getElementById(id).style.width = enlarge1;
+        }
+
+        function checkuser() {
+            let text = document.forms["Username"]["username"].value;
+            var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
+            for (i = 0; i < specialChars.length; i++) {
+                if (text.indexOf(specialChars[i]) > -1) {
+                    alert("Username should'nt have special characters");
+                    return false;
+                }
+            }
+            alert("Username Successfull");
+
+            function bgmchange() {
+                document.body.className = "bgm_change";
+            }
+            let p1 = document.forms["Password"]["pwd1"].value;
+            let p2 = document.forms["Password"]["pwd2"].value;
+            if (p1 == p2 && p1 != "")
+                alert("Perfect!")
+            else
+                alert("Retry Password!")
+            return false;
+        }
+    </script>
     <style>
-    html{height:100%;width:100%;}
-    
-    body  {
-    border:red;  
-    background-repeat: no-repeat;  
-    background-blend-mode: lighten; 
-    background-size: cover;
-    background-image: linear-gradient(to right bottom,#63A4FF 20%,#83EAF1 60%);
-    color:black;
-    font-size:105%;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-} 
-    </style> 
-    
-  </HEAD>
-  <BODY>
+        html {
+            height: 120%;
+            width: 100%;
+        }
+
+        body {
+            border: red;
+            background-repeat: no-repeat;
+            background-blend-mode: lighten;
+            background-size: cover;
+            background-image: linear-gradient(to right bottom, #63A4FF 20%, #83EAF1 60%);
+            color: black;
+            opacity: 0.8;
+            font-size: 105%;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            transition: background-color 1s ease-in-out;
+        }
+
+        body:hover {
+            opacity: 1;
+        }
+
+        p {
+            transition: display 4s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: blue;
+        }
+
+        .hidden {
+            display: block;
+            opacity: 0;
+            text-align: center;
+            transition: all .10s ease-in-out;
+        }
+
+        .advice:hover+.hidden {
+            display: block;
+            opacity: 1;
+        }
+
+        input:focus {
+            background-color: black;
+            color: white;
+        }
+
+        #password:hover {
+            color: red;
+        }
+
+        #retype:hover {
+            color: red;
+        }
+
+        #pwd1:focus {
+            background-color: white;
+            color: white;
+        }
+
+        #pwd2:focus {
+            background-color: white;
+            color: white;
+        }
+
+        #pwd1:blur {
+            opacity: 0;
+        }
+
+        #pwd1:blur {
+            opacity: 0;
+        }
+    </style>
+
+</HEAD>
+
+<BODY>
     <center>
-      <h3 style = "text-align:center">SIGN IN</h3>
+        <img id="sign-in" src="data:image/jpeg;base64,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" style="width: 300px;
+                text-align:center;
+        height: 200px;
+                        transition:all 2.5s ease;
+                        cursor:pointer" onmouseover=" img_increase('sign-in')" onmouseout="img_decrease('sign-in')">
+        </img>
 
-      <form name="Username" action="/action_page.php" method="post">
-  Username:&emsp; 
-  <input type="text" name="username">
-        <span>&ensp;&ensp;&ensp;&ensp;</span>
-  <input type="hidden" src="https://images.app.goo.gl/uP71Wcic8pTnPVEQ7" alt="Submit"  width="20" height="20" onclick="return checkuser()">
-</form>
+        <h3 style="text-align:center">SIGN IN</h3>
 
-      <h3 style = "text-align:left"></h3>
-      
- <form name = "email_check"> 
-      <label email1="email">Email:&emsp;</label>
-      <input type="email" id="email" name="email">
-      </form>
-      
-      <h3 style = "text-align:left"></h3>
-      
- <form name = "Password" method="post">
-      <label password="pwd">Password:(min 3 char:)</label>
-      <input type="password" id="pwd1" name="pwd1" minlength="7" maxlength="20">
-      <h3 style = "text-align:left"></h3>
- <label password="pwd">Retype password</label>
-      <input type="password" id="pwd2" name="pwd2" minlength="7" maxlength="20"><br><br>
-      <input type="image" src="https://images.app.goo.gl/uP71Wcic8pTnPVEQ7" alt="submit credentials"  width="20" height="20" onclick="return checkuser()">
-</form>
-      
+        <form name="Username" action="/action_page.php" method="post">
+            Username:&emsp;
+            <input type="text" name="username">
+            <span>&ensp;&ensp;&ensp;&ensp;</span>
+            <input type="hidden" src="https://images.app.goo.gl/uP71Wcic8pTnPVEQ7" alt="Submit" width="20" height="20" onclick="return checkuser()">
+        </form>
+
+        <h3 style="text-align:left"></h3>
+
+        <form name="email_check">
+            <label email1="email">Email:&emsp;</label>
+            <input type="email" id="email" name="email">
+        </form>
+
+        <h3 style="text-align:left"></h3>
+
+        <form name="Password" method="post">
+            <label password="pwd" id="password">Password:(min 3 char:)</label>
+            <input type="password" id="pwd1" name="pwd1" minlength="7" maxlength="20" onfocus="bgmchange()">
+            <h3 style="text-align:left"></h3>
+            <label password="pwd" id="retype">Retype password</label>
+            <input type="password" id="pwd2" name="pwd2" minlength="7" maxlength="20"><br><br>
+            <input type="image" id="submit" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAPGjjvWNqTJAQ4FdU7sUOsxh_izVIH5cvyg&usqp=CAU" alt="submit credentials" style="width:80px;height:70px;transition:all 1.5s ease;
+                        cursor:pointer" ; onclick="return checkuser()" onmouseover="img_increase('submit')" onmouseout="img_decrease('submit')">
+        </form>
+
+        <div class="advice">
+            <p>*Move over this for additional guidance or advice</p>
+        </div>
+        <div class="hidden">
+            <p> Enter valid username(don't use specal symbols such as @,-,_,etc.,)</p>
+            <p> Type your pasword carefully, the same password twice...don't use trivial passwords</p>
+            <p>like your birthday,name,etc.,</p>
+            <p>click submit button to conclude</p>
+
+        </div>
     </center>
-  </BODY>
-</HTML>  
+</BODY>
+
+</HTML>
