@@ -14,6 +14,7 @@
             var enlarge1 = "" + parseInt(enlarge, 10) * 0.8 + "px";
             document.getElementById(id).style.width = enlarge1;
         }
+        
 
         function checkuser() {
             let text = document.forms["Username"]["username"].value;
@@ -137,7 +138,7 @@
 
         <form name="email_check">
             <label email1="email">Email:&emsp;</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" onclick="email_check()">
         </form>
 
         <h3 style="text-align:left"></h3>
