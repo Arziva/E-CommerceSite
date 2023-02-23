@@ -1,0 +1,28 @@
+{
+    "arrayOfProducts":[
+        {
+            "imgUrl": "",
+            "name": "",
+            "price": "",
+            "description": ""
+        },
+        {
+            "imgUrl": "",
+            "name": "",
+            "price": "",
+            "description": ""
+        },
+        {
+            "imgUrl": "",
+            "name": "",
+            "price": "",
+            "description": ""
+        },
+        {
+            "imgUrl": "",
+            "name": "",
+            "price": "",
+            "description": ""
+        }
+    ]
+}
