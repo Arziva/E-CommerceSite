@@ -35,7 +35,11 @@ r.onload = function(){
     arrayOfProducts.forEach((element) => {
 
         let html = '
-        <div>
+        <div> style = 'display:flex; font-size: 14px; height: 130px; 
+            <div><img src = "${element.imgUrl}" height = "100" width = "100";
+            <div style = "padding: 5px 10px;"><p>${element.name}</p>
+            <div style = "font-size: 12px; padding: 5px 10px;"><p>${element.description}</p>
+            <div style = "padding: 5px 10px;"><p>${element.price}</p>
 
         </div>
         ';
