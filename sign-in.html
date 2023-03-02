@@ -1,169 +1,195 @@
-<!DOCTYPE HTML>
-<HTML>
-
-<HEAD>
-    <script>
-        function img_increase(id) {
-            var enlarge = document.getElementById(id).style.width;
-            var enlarge1 = "" + parseInt(enlarge, 10) * 1.2 + "px";
-            document.getElementById(id).style.width = enlarge1;
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sign in</title>
+      	<style>
+          /* position? text-shadow(horizontal,vertical,blur radius,color) 
+           Padding 10px for all inner elements -> the container*/
+           body{
+            position:relative;
+            text-shadow: 0.25px 0.25px 1px rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-top:50px;
+            margin-left:390px;
+            padding:10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
         }
-
-        function img_decrease(id) {
-            var enlarge = document.getElementById(id).style.width;
-            var enlarge1 = "" + parseInt(enlarge, 10) * 0.8 + "px";
-            document.getElementById(id).style.width = enlarge1;
+        /* Container has its width and height, a rectangular border with box-shadow h,v,b_rad,color,spread 
+           The margin of body is th margin of container ; 40px padded for internal contents*/
+        #container{
+            width:600px;
+            height:500px;
+            padding-left:120px;
+            background-color: rgba(255, 255, 255, 0.001);
+            margin:0;
+            border-width:10px 5px 5px 10px;
+            border-color:10px solid black;
+            box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.8);
         }
-        
-
-        function checkuser() {
-            let text = document.forms["Username"]["username"].value;
-            var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
-            for (i = 0; i < specialChars.length; i++) {
-                if (text.indexOf(specialChars[i]) > -1) {
-                    alert("Username should'nt have special characters");
-                    return false;
-                }
-            }
-            alert("Username Successfull");
-
-            function bgmchange() {
-                document.body.className = "bgm_change";
-            }
-            let p1 = document.forms["Password"]["pwd1"].value;
-            let p2 = document.forms["Password"]["pwd2"].value;
-            if (p1 == p2 && p1 != "")
-                alert("Perfect!")
-            else
-                alert("Retry Password!")
-            return false;
-        }
-    </script>
-    <style>
-        html {
-            height: 120%;
-            width: 100%;
-        }
-
-        body {
-            border: red;
-            background-repeat: no-repeat;
-            background-blend-mode: lighten;
-            background-size: cover;
-            background-image: linear-gradient(to right bottom, #63A4FF 20%, #83EAF1 60%);
-            color: black;
-            opacity: 0.8;
-            font-size: 105%;
-            font-family: "Trebuchet MS", Helvetica, sans-serif;
-            transition: background-color 1s ease-in-out;
-        }
-
-        body:hover {
-            opacity: 1;
-        }
-
-        p {
-            transition: display 4s ease-in-out;
-        }
-
-        input[type="submit"]:hover {
-            background-color: blue;
-        }
-
-        .hidden {
-            display: block;
-            opacity: 0;
+        /*Center aligned sign in header. Inherit ironically stops inheriting padding and set it to zero */
+        h1{
             text-align: center;
-            transition: all .10s ease-in-out;
+            padding:inherit;
+            padding-right:90px;
+            font-weight:540;
+         /*dont show text-icon in cursor when it is hovered over*/
+            user-select: none;
         }
-
-        .advice:hover+.hidden {
-            display: block;
-            opacity: 1;
+         /*All labels and inputs are always inline - br is used for line breaks inside */
+        label,input{
+            font-size : 23px;
+            display:inline-block;
+            user-select: none;
         }
-
-        input:focus {
-            background-color: black;
-            color: white;
+         /* for all input text boxes ,minor border is set */
+        #username,#password,#retype,#email{
+            margin-left:30px;
+            padding-left:10px;
+            padding-right:5px;
+            border-radius:5px;
+            border:4px;
+            box-shadow: 0 0 6px 3px rgba(100,100,100, 0.8);
+            font-family: cursive;
+            transition: transform 0.3s ease-in-out;
         }
-
-        #password:hover {
-            color: red;
+         /* All in the same phase */
+        #username{
+            margin-left:25px;
         }
-
-        #retype:hover {
-            color: red;
+        #email{
+            margin-left:75px;
         }
-
-        #pwd1:focus {
-            background-color: white;
-            color: white;
+        /* hovering beauty */
+        #username:hover,#password:hover,#retype:hover,#email:hover {
+            border-radius:6px;
+            border:5px;
+            box-shadow: 0 0 8px 6px rgba(100,100,100, 0.8);
+             /* transform property is used to apply transformations to an element, such as scaling, rotating, skewing, or translating (moving) it. */
+            transform: scale(1.02);
+            /* transform: scale(1.5); - scales the element by 150% of its original size.
+            transform: rotate(45deg); - rotates the element by 45 degrees.
+            transform: skew(20deg, 10deg); - skews the element along the X and Y axis.
+            transform: translate(50px, 100px); - moves the element 50 pixels to the right and 100 pixels down */
         }
+        /*placeholder styling*/
+        input[type="text"] , input[type="password"] , input[type="email"]{
+            font-size: 20px;
+          }
+        input::placeholder {
+            color: lightgrey;
+            font-style: italic;
+            opacity: 8.0;
+            font-size: 13px;
+          }
+        /*Submit button is ovalised and size is changed a bit*/
+        #submit{
+            cursor: pointer;
 
-        #pwd2:focus {
-            background-color: white;
-            color: white;
+            margin-right:120px;
+            margin-top:40px;
+            border: 2px solid black;
+            border-radius:25px;
+            padding:3px;
+            font-weight:bold;
+            background-color: rgb(247, 242, 242);
+            font-size: 16px;
+            width: 100px;
+            height: 45px;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+            transition: transform 0.1s ease-in-out;
         }
-
-        #pwd1:blur {
-            opacity: 0;
+        #submit:hover {
+            transform: scale(1.01);
+            box-shadow: 1px 1px 12px 3px rgba(0, 0, 0, 0.15);
         }
-
-        #pwd1:blur {
-            opacity: 0;
+        /*Specially for hyperlinks cursor is default treats as text*/
+        a{
+            padding:0px;
+            padding:inherit;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            cursor:pointer;
         }
-    </style>
-
-</HEAD>
-
-<BODY>
-    <center>
-        <img id="sign-in" src="data:image/jpeg;base64,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" style="width: 300px;
-                text-align:center;
-        height: 200px;
-                        transition:all 2.5s ease;
-                        cursor:pointer" onmouseover=" img_increase('sign-in')" onmouseout="img_decrease('sign-in')">
-        </img>
-
-        <h3 style="text-align:center">SIGN IN</h3>
-
-        <form name="Username" action="/action_page.php" method="post">
-            Username:&emsp;
-            <input type="text" name="username">
-            <span>&ensp;&ensp;&ensp;&ensp;</span>
-            <input type="hidden" src="https://images.app.goo.gl/uP71Wcic8pTnPVEQ7" alt="Submit" width="20" height="20" onclick="return checkuser()">
-        </form>
-
-        <h3 style="text-align:left"></h3>
-
-        <form name="email_check">
-            <label email1="email">Email:&emsp;</label>
-            <input type="email" id="email" name="email" onclick="email_check()">
-        </form>
-
-        <h3 style="text-align:left"></h3>
-
-        <form name="Password" method="post">
-            <label password="pwd" id="password">Password:(min 3 char:)</label>
-            <input type="password" id="pwd1" name="pwd1" minlength="7" maxlength="20" onfocus="bgmchange()">
-            <h3 style="text-align:left"></h3>
-            <label password="pwd" id="retype">Retype password</label>
-            <input type="password" id="pwd2" name="pwd2" minlength="7" maxlength="20"><br><br>
-            <input type="image" id="submit" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAPGjjvWNqTJAQ4FdU7sUOsxh_izVIH5cvyg&usqp=CAU" alt="submit credentials" style="width:80px;height:70px;transition:all 1.5s ease;
-                        cursor:pointer" ; onclick="return checkuser()" onmouseover="img_increase('submit')" onmouseout="img_decrease('submit')">
-        </form>
-
-        <div class="advice">
-            <p>*Move over this for additional guidance or advice</p>
+        /*default link*/
+        a:link {
+            color: blue;
+          }
+          /* visited link */
+        a:visited {
+            color:blueviolet;
+          }  
+        /* mouse over link */
+        a:hover {
+            text-decoration-line: underline;
+            color: blue;
+          }
+        /* selected link */
+        a:active {
+            color:darkmagenta;
+          }
+        /*Just to space last 3 terms inline and inline block? flex?*/
+        .spacing{
+            padding:inherit;
+            padding-left:155px;
+        }
+        </style>
+        <!-- must include JS Library -- no onsubmit function and all needed simply add events here -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+           //preventDefault() is a method that can be called on an event object to prevent the default behavior of an event.
+           $(document).ready(function() {
+              $('#form1').submit(function(e) {
+                var password = $('#password').val();
+                var retypePassword = $('#retype').val();
+                if (password !== retypePassword) {
+                  alert('Passwords do not match!');
+                  e.preventDefault();
+                }
+                else{
+                  alert('Successfull!')
+                }
+              });
+            });
+          </script>
+    </head>
+    <body>
+        <!-- Enclose everything inside main container -->
+        <div id = "container">
+            <span><h1>Sign -In</h1></span>
+            <br>
+            <form id = "form1" target = "__blank" method = "post">
+                    <label for = "username">Username:</label>
+                    <!-- So, if you want to match two consecutive characters, one lowercase and one uppercase, you can use [a-z][A-Z]. 
+                    If you want to match any single alphabetic character, you can use [a-zA-Z]. -->
+                    <input id  = "username" name = "username" form ="form1" placeholder="only letters 6-20 characters" type = "text" 
+                    pattern = "[a-zA-Z]+" required>
+                    <br><br>
+                    <label for = "email"> Email:</label>
+                    <input id  = "email" name = "email" form ="form1" placeholder="xyz@student.tce.edu" type = "email">
+                    <br><br>
+                    <label for = "password">Password:</label>
+                    <!-- ?= is the syntax for a positive lookahead. It means that the pattern that follows should match, but it should not be included in the matched string.
+                    .* matches any character (except for a newline) 0 or more times. The . character matches any character, and the * means "0 or more times".
+                    \W is a character class that matches any character that is not a word character.
+                    {8,} is a quantifier that specifies that the preceding element should occur at least 8 times.
+                    Including $ in the regular expression ensures that the pattern must match the entire string, not just a portion of it. -->
+                    <input id  = "password" name = "password" form ="form1" placeholder="atleast 1 caps, symbol ,number >8 chars" type = "password"
+                    pattern = "^(?=.*[\W])(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$" required>
+                    <br><br>
+                    <label for = "retype">Retype<br> Password:</label>
+                    <input id  = "retype" name = "retype" form ="form1" placeholder="eg:123#xyz2" type = "password"
+                    pattern = "^(?=.*[\W])(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$" required>
+                    <br><br>
+                    <center>
+                    <input id = "submit" name = "sumbit" type = "submit">
+                    </center>
+            </form> 
         </div>
-        <div class="hidden">
-            <p> Enter valid username(don't use specal symbols such as @,-,_,etc.,)</p>
-            <p> Type your pasword carefully, the same password twice...don't use trivial passwords</p>
-            <p>like your birthday,name,etc.,</p>
-            <p>click submit button to conclude</p>
-
-        </div>
-    </center>
-</BODY>
-
-</HTML>
+            <br>
+            <a>Privacy Policy</a>
+            <span class = "spacing"></span>
+            <a>About</a>
+            <span class = "spacing"></span>
+            <a>Terms and conditions</a>
+    </body>
+</html>
