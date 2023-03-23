@@ -10,5 +10,5 @@
     out.println("Today's date is: "+today);
     %>
     </CENTER>     
-    </BODY>     
-    </HTML>
+</BODY>     
+</HTML>
