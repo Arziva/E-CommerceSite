@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
+};
+xhttp.open("GET", "AtrisanSampleXml.xml", true);
+xhttp.send();
+
+function myFunction(xml) {
+    var xmlDoc = xml.responseXML;
+    var x = xmlDoc.documentElement.childNodes;
+    document.getElementById("demo").innerHTML = 
+    "Number of child nodes: " + x.length;
+}
+
+var xmlDoc = xml.responseXML;
+var x = xmlDoc.documentElement.childNodes;
+
+for (i = 0; i < x.length ;i++) {
+  txt += x[i].nodeName + ": " + x[i].childNodes[0].nodeValue + "<br>";
+}
+</script>
+</body>
+</html>

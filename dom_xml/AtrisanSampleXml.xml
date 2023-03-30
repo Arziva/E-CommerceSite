@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Artisan>
+  <Product>
+    <Name>Artisan Sourdough Bread</Name>
+    <Description>A delicious, crusty bread made with a natural sourdough starter.</Description>
+    <Price>5.99</Price>
+    <Image>artisan_sourdough_bread.jpg</Image>
+  </Product>
+  <Product>
+    <Name>Artisan Baguette</Name>
+    <Description>A classic French-style baguette with a crisp crust and soft interior.</Description>
+    <Price>3.99</Price>
+    <Image>artisan_baguette.jpg</Image>
+  </Product>
+  <Product>
+    <Name>Artisan Croissant</Name>
+    <Description>A flaky, buttery croissant made with traditional French techniques.</Description>
+    <Price>2.49</Price>
+    <Image>artisan_croissant.jpg</Image>
+  </Product>
+</Artisan>
