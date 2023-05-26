@@ -1,4 +1,4 @@
-#Artizon E-commerce Site
+Artizon E-commerce Site
 
 Artizon is an E-commerce site designed specifically for artisans all over India.
 Its primary purpose is to provide a platform for artisans to showcase and sell their unique products to customers who appreciate handmade and artistic creations.
@@ -47,4 +47,4 @@ License
 The Artizon E-commerce site is licensed under the MIT License. Please refer to the LICENSE file for more information.
 
 Contact
-If you have any questions or suggestions regarding the Artizon E-commerce site, feel free to contact us at [email address]. We appreciate your feedback and involvement in the project!
+If you have any questions or suggestions regarding the Artizon E-commerce site, feel free to contact us at arunkumarnavamani@gmail.com We appreciate your feedback and involvement in the project!
